@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router';
+import './NavBar.css';
 
 const NavBar = () => {
 
@@ -23,7 +24,7 @@ const NavBar = () => {
        {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <NavLink to="/" className="btn btn-ghost text-xl hover:text-2xl hover:text-green-200">TMT BROWS</NavLink>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -31,7 +32,7 @@ const NavBar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <a href="https://www.facebook.com/TMTBrows" className="btn hover:text-2xl hover:text-red-500">Follow?</a>
   </div>
 </div>
     );
