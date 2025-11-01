@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import { auth } from '../../firebase/Firebase.init';
 
 const Register = () => {
+    
 
     const handleRegister = (event) =>{
         event.preventDefault();
