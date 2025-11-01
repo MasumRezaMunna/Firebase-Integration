@@ -1,12 +1,12 @@
 import React, { use } from 'react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import './NavBar.css';
 import { AuthContext } from '../../contexts/AuthContext/AuthContext';
 
 const NavBar = () => {
 
-  const authInfo = use(AuthContext);
-  console.log('navbar', authInfo)
+  const {user} = use(AuthContext);
+  
 
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
@@ -37,6 +37,7 @@ const NavBar = () => {
   </div>
   <div className="navbar-end">
     <a href="https://www.facebook.com/TMTBrows" className="btn hover:text-2xl hover:text-red-500">Follow?</a>
+    {user ? <a className='btn'>Sign Out</a> : <Link to="/login">Login</Link> }
   </div>
 </div>
     );
