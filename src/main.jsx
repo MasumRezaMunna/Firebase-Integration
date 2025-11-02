@@ -11,6 +11,8 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Donate from "./components/Donate/Donate";
 import AuthProvider from "./contexts/AuthContext/AuthProvider";
+import Orders from "./components/Orders/Orders";
+import Profile from "./components/Profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,15 @@ const router = createBrowserRouter([
         path: "donate",
         Component: Donate,
       },
+      {
+        path: "orders",
+        Component: Orders,
+      },
+      {
+        path: "profile",
+        Component: Profile,
+      }
+      
     ],
   },
 ]);

@@ -2,16 +2,36 @@ import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import './NavBar.css';
 import { AuthContext } from '../../contexts/AuthContext/AuthContext';
+import { auth } from '../../firebase/Firebase.init';
 
 const NavBar = () => {
 
-  const {user} = use(AuthContext);
+  const {user, signOutUser} = use(AuthContext);
+
+  const handleSignOut = () =>{
+    signOutUser(auth)
+    .then(() =>{
+
+    })
+    .catch(error =>{
+      console.log(error)
+    })
+  }
   
 
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/login">Login</NavLink></li>
         <li><NavLink to="/register">Register</NavLink></li>
+
+        {
+          user && <>
+                      <li><NavLink to="/orders">Orders</NavLink></li>
+                      <li><NavLink to="/profile">Profile</NavLink></li>
+                      
+
+          </>
+        }
         
     </>
 
@@ -35,9 +55,10 @@ const NavBar = () => {
       {links}
     </ul>
   </div>
-  <div className="navbar-end">
+  <div className="navbar-end gap-5">
     <a href="https://www.facebook.com/TMTBrows" className="btn hover:text-2xl hover:text-red-500">Follow?</a>
-    {user ? <a className='btn'>Sign Out</a> : <Link to="/login">Login</Link> }
+    
+    {user ? <a onClick={handleSignOut} className='btn'>Sign Out</a> : <Link className='btn' to="/login"> <span className='hover:text-6xl'>?😒</span></Link> }
   </div>
 </div>
     );
