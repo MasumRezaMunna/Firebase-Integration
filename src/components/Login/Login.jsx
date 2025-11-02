@@ -39,7 +39,7 @@ const Login = () => {
           <button className="btn btn-neutral mt-4">Login</button>
         </fieldset>
         </form> 
-        <p>New to our website? Please <Link className='text-blue-500 underline hover:text-blue-700' to="/login">Register</Link> </p>
+        <p>New to our website? Please <Link className='text-blue-500 underline hover:text-blue-700' to="/register">Register</Link> </p>
 
   </div>
 </div>

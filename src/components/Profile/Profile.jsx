@@ -1,9 +1,10 @@
 import React from "react";
 
 const Profile = () => {
+
   return (
     <div>
-      <p>You are Nothing</p>
+      <p>Amra Giyar Soinik, Giyar soinik der kono voy nai.💪💪💪</p>
     </div>
   );
 };
